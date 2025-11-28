@@ -33,7 +33,7 @@
                 <th>#</th>
                 <th>Task</th>
                 <th>Description</th>
-                <th>Date</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -43,7 +43,7 @@
                     <td>{{ $task->id }}</td>
                     <td>{{ $task->name }}</td>
                     <td>{{ $task->description ?? '-' }}</td>
-                    <td>{{ $task->created_at }}</td>
+                    <td>{{ ucfirst($task->status ?? 'pending') }}</td>
                     <td>
                         <form method="POST" action="{{ route('tasks.destroy', $task->id) }}" style="display:inline;">
                             @csrf

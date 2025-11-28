@@ -23,6 +23,7 @@ class TaskController extends Controller
         Task::create([
             'name' => $request->name,
             'description' => $request->description,
+            'status' => 'pending',
         ]);
 
         return redirect()->route('tasks.index');
